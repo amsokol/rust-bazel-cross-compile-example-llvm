@@ -22,7 +22,7 @@ rust_binary(
 )
 
 [
-    # Use gcr.io/distroless/cc-debian12
+    # Use gcr.io/distroless/cc-debian13
     # To run the binary in OCI container.
     rust_binary(
         name = "hello_world_%s" % arch,

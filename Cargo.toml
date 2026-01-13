@@ -4,11 +4,11 @@ members = ["rust/hello_world"]
 
 [workspace.package]
 edition = "2024"
-rust-version = "1.89.0"
+rust-version = "1.92.0"
 readme = "README.md"
 
 [workspace.dependencies]
 # Internal crates
 # External crates
 mimalloc = "0.1.48"
-tokio = "1.47.1"
+tokio = "1.49.0"

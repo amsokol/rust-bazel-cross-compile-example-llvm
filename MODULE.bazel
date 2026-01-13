@@ -3,15 +3,16 @@ Root Bazel module configuration file that defines dependencies and external repo
 """
 
 module(
-    name = "rust_bazel_cross_compile_example",
+    name = "rust_bazel_cross_compile_example_llvm",
     version = "0.1.0",
 )
-bazel_dep(name = "rules_rust", version = "0.63.0")
+
+bazel_dep(name = "rules_rust", version = "0.68.1")
 bazel_dep(name = "platforms", version = "1.0.0")
-bazel_dep(name = "toolchains_llvm", version = "1.4.0")
+bazel_dep(name = "toolchains_llvm", version = "1.6.0")
 git_override(
     module_name = "toolchains_llvm",
-    commit = "0bdeae25025aeb6f914db2a02cb2efeb302743b5",
+    commit = "53170fe4af507cd3b4e547268c5591d1914de1bf",
     remote = "https://github.com/bazel-contrib/toolchains_llvm.git",
 )
 

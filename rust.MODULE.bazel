@@ -10,16 +10,16 @@ http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "ht
 http_archive(
     name = "sysroot_linux_amd64",
     build_file = "//:BUILD.sysroot",
-    sha256 = "c6fcc3a5390028891c97933495b881765cb3fe78b7b3182cfc8a5ba5caab1939",
-    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2025-08-24/debian-bookworm-sysroot-amd64.tar.xz"],
+    sha256 = "bb19e1ac5d1adc6e3ca73ce042957627ea4cef4062ce8252a98b9bccd30329f2",
+    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2025-12-30/debian-trixie-sysroot-amd64.tar.xz"],
 )
 
 # ARM 64 Sysroot.
 http_archive(
     name = "sysroot_linux_arm64",
     build_file = "//:BUILD.sysroot",
-    sha256 = "51c69a689328b734a0b4c2e703ad8178edd802de6ac5d9568c32ee58c0b5fc1e",
-    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2025-08-24/debian-bookworm-sysroot-arm64.tar.xz"],
+    sha256 = "a603869b0967b3748defa345be47662286a1602eec0871e9fc6b77bd1556a2dc",
+    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2025-12-30/debian-trixie-sysroot-arm64.tar.xz"],
 )
 
 # https://github.com/bazel-contrib/toolchains_llvm/blob/master/toolchain/internal/llvm_distributions.bzl
@@ -27,11 +27,11 @@ llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm", 
 llvm.toolchain(
     name = "llvm_toolchain",
     # Use LLVM version corresponded to LLVM is embedded into Rust toolchain.
-    # Rust 1.89 embeds LLVM 20.1.7
+    # Rust 1.92 embeds LLVM 21.1.3
     llvm_versions = {
-        "darwin-aarch64": "20.1.8",
-        "linux-aarch64": "20.1.8",
-        "linux-x86_64": "20.1.8",
+        "darwin-aarch64": "21.1.8",
+        "linux-aarch64": "21.1.8",
+        "linux-x86_64": "21.1.8",
     },
 )
 llvm.sysroot(
@@ -53,7 +53,7 @@ register_toolchains(
 
 RUST_EDITION = "2024"
 
-RUST_VERSION = "1.89.0"
+RUST_VERSION = "1.92.0"
 
 rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
 rust.toolchain(
