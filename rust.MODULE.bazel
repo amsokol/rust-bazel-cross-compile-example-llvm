@@ -10,16 +10,16 @@ http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "ht
 http_archive(
     name = "sysroot_linux_amd64",
     build_file = "//:BUILD.sysroot",
-    sha256 = "bb19e1ac5d1adc6e3ca73ce042957627ea4cef4062ce8252a98b9bccd30329f2",
-    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2025-12-30/debian-trixie-sysroot-amd64.tar.xz"],
+    sha256 = "2db6f4172fe228eceefb1d7fc5cf3b28049bbbf30cde22da9dc74d2780c8b4b9",
+    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2026-01-13/debian-trixie-sysroot-amd64.tar.xz"],
 )
 
 # ARM 64 Sysroot.
 http_archive(
     name = "sysroot_linux_arm64",
     build_file = "//:BUILD.sysroot",
-    sha256 = "a603869b0967b3748defa345be47662286a1602eec0871e9fc6b77bd1556a2dc",
-    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2025-12-30/debian-trixie-sysroot-arm64.tar.xz"],
+    sha256 = "f608350bba1f26db700c6c9dc3739648e23920b0831f839bf2a1708501c07142",
+    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2026-01-13/debian-trixie-sysroot-arm64.tar.xz"],
 )
 
 # https://github.com/bazel-contrib/toolchains_llvm/blob/master/toolchain/internal/llvm_distributions.bzl
