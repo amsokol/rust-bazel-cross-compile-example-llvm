@@ -10,10 +10,5 @@ module(
 bazel_dep(name = "rules_rust", version = "0.68.1")
 bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "toolchains_llvm", version = "1.6.0")
-git_override(
-    module_name = "toolchains_llvm",
-    commit = "53170fe4af507cd3b4e547268c5591d1914de1bf",
-    remote = "https://github.com/bazel-contrib/toolchains_llvm.git",
-)
 
 include("//:rust.MODULE.bazel")
