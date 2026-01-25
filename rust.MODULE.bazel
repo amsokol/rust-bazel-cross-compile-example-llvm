@@ -4,20 +4,20 @@ This module sets up the Rust toolchain, LLVM toolchain, and required crates
 for Rust service development.
 """
 
-http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+sysroot = use_repo_rule("@toolchains_llvm//toolchain:sysroot.bzl", "sysroot")
 
 # INTEL/AMD64 Sysroot.
-http_archive(
+sysroot(
     name = "sysroot_linux_amd64",
-    build_file = "//:BUILD.sysroot",
+    exclude_patterns = ["./dev/*"],
     sha256 = "2db6f4172fe228eceefb1d7fc5cf3b28049bbbf30cde22da9dc74d2780c8b4b9",
     urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2026-01-13/debian-trixie-sysroot-amd64.tar.xz"],
 )
 
 # ARM 64 Sysroot.
-http_archive(
+sysroot(
     name = "sysroot_linux_arm64",
-    build_file = "//:BUILD.sysroot",
+    exclude_patterns = ["./dev/*"],
     sha256 = "f608350bba1f26db700c6c9dc3739648e23920b0831f839bf2a1708501c07142",
     urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2026-01-13/debian-trixie-sysroot-arm64.tar.xz"],
 )
@@ -35,12 +35,12 @@ llvm.toolchain(
 
 llvm.sysroot(
     name = "llvm_toolchain",
-    label = "@sysroot_linux_amd64//:sysroot",
+    label = "@sysroot_linux_amd64//sysroot:sysroot",
     targets = ["linux-x86_64"],
 )
 llvm.sysroot(
     name = "llvm_toolchain",
-    label = "@sysroot_linux_arm64//:sysroot",
+    label = "@sysroot_linux_arm64//sysroot:sysroot",
     targets = ["linux-aarch64"],
 )
 use_repo(llvm, "llvm_toolchain")
@@ -76,7 +76,6 @@ cargo.from_cargo(
     cargo_lockfile = "//:Cargo.lock",
     manifests = [
         "//:Cargo.toml",
-        "rust/hello_world/Cargo.toml",
     ],
 )
 use_repo(cargo, "cargo")
