@@ -6,6 +6,9 @@ version = "0.1.0"
 ARCHS = [
     "arm64",
     "amd64",
+    "amd64_v2",
+    "amd64_v3",
+    "amd64_v4",
 ]
 
 rust_binary(
