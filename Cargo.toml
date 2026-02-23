@@ -10,5 +10,5 @@ readme = "README.md"
 [workspace.dependencies]
 # Internal crates
 # External crates
-mimalloc = "0.1.48"
+mimalloc = { git = "https://github.com/amsokol/mimalloc", tag = "v2.2.7" }
 tokio = "1.49.0"
