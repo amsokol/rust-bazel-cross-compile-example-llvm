@@ -499,7 +499,7 @@
           "REPO_MAPPING:rules_rust+,rules_cc rules_cc+",
           "REPO_MAPPING:rules_rust+,rules_rust rules_rust+",
           "FILE:@@//Cargo.lock 4c094b80ba74ceb0f6b4ed90122f3365ceaae9c6009ace0c74445df249d1d42e",
-          "FILE:@@//Cargo.toml 951746d4da878cea7f26fa4ed2aa1784f747694aa0854d1b9545c6e3efa00860",
+          "FILE:@@//Cargo.toml 5f764cbcc948c26c53abcdb07b34fd6ce26a1a6f8c7acf9cdcadf368fd49757d",
           "FILE:@@//rust/hello_world/Cargo.toml 2421e7e36cb1491a3ac298a0efe45aa6cec707a61bfee161fd1ee7978b709750"
         ],
         "generatedRepoSpecs": {
