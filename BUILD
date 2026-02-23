@@ -1,3 +1,6 @@
+load("//constraints/amd64:defs.bzl", "AMD64_VARIANTS")
+load("//constraints/arm64:defs.bzl", "ARM64_VARIANTS")
+
 # Configuration setting for fastbuild mode.
 config_setting(
     name = "fastbuild",
@@ -18,6 +21,8 @@ config_setting(
 
 # Rust and C/C++ cross compilation settings
 
+# x86-64 platforms
+
 platform(
     name = "linux-x86_64",
     constraint_values = [
@@ -27,50 +32,28 @@ platform(
     visibility = ["//visibility:public"],
 )
 
-platform(
-    name = "linux-x86_64-v2",
-    constraint_values = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-        "//constraints/amd64:v2",
-    ],
-    visibility = ["//visibility:public"],
-)
+[
+    platform(
+        name = "linux-x86_64-%s" % v,
+        constraint_values = [
+            "@platforms//os:linux",
+            "@platforms//cpu:x86_64",
+            "//constraints/amd64:%s" % v,
+        ],
+        visibility = ["//visibility:public"],
+    )
+    for v in AMD64_VARIANTS
+]
 
-platform(
-    name = "linux-x86_64-v3",
-    constraint_values = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-        "//constraints/amd64:v3",
-    ],
-    visibility = ["//visibility:public"],
-)
+[
+    config_setting(
+        name = "amd64_%s" % v,
+        constraint_values = ["//constraints/amd64:%s" % v],
+    )
+    for v in AMD64_VARIANTS
+]
 
-platform(
-    name = "linux-x86_64-v4",
-    constraint_values = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-        "//constraints/amd64:v4",
-    ],
-    visibility = ["//visibility:public"],
-)
-
-config_setting(
-    name = "amd64_v2",
-    constraint_values = ["//constraints/amd64:v2"],
-)
-
-config_setting(
-    name = "amd64_v3",
-    constraint_values = ["//constraints/amd64:v3"],
-)
-
-config_setting(
-    name = "amd64_v4",
-    constraint_values = ["//constraints/amd64:v4"],
-)
+# AArch64 platforms
 
 platform(
     name = "linux-aarch64",
@@ -80,3 +63,24 @@ platform(
     ],
     visibility = ["//visibility:public"],
 )
+
+[
+    platform(
+        name = "linux-aarch64-%s" % v,
+        constraint_values = [
+            "@platforms//os:linux",
+            "@platforms//cpu:aarch64",
+            "//constraints/arm64:%s" % v,
+        ],
+        visibility = ["//visibility:public"],
+    )
+    for v in ARM64_VARIANTS
+]
+
+[
+    config_setting(
+        name = "arm64_%s" % v,
+        constraint_values = ["//constraints/arm64:%s" % v],
+    )
+    for v in ARM64_VARIANTS
+]
