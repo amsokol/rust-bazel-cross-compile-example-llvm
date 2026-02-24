@@ -33,6 +33,7 @@ _BUILD_FLAGS_RELEASE = [
 # ARCH_APPLY_IREL blindly calls every entry's addend as a function pointer,
 # segfaulting on GLOB_DAT entries (addend=0). Defining the weak undefined
 # symbols eliminates GLOB_DAT entries, leaving only IRELATIVE in .rela.dyn.
+# See README.md "Static Linking and the lld IRELATIVE Bug" for details.
 _STATIC_WEAK_SYMS = [
     "__gmon_start__",
     "__cxa_finalize",
