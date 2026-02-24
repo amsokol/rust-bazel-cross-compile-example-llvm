@@ -58,15 +58,6 @@ rust.toolchain(
         "aarch64-unknown-linux-gnu",
         "x86_64-unknown-linux-gnu",
     ],
-    sha256s = {
-        "cargo-1.93.0-aarch64-apple-darwin.tar.xz": "6443909350322ad07f09bb5edfd9ff29268e6fe88c7d78bfba7a5e254248dc25",
-        "clippy-1.93.0-aarch64-apple-darwin.tar.xz": "0b6e943a8d12be0e68575acf59c9ea102daf795055fcbbf862b0bfd35ec40039",
-        "llvm-tools-1.93.0-aarch64-apple-darwin.tar.xz": "c4ec87d184c806582cde0314698f88b60ac4f63dbc8857a16314726e1d43585a",
-        "rust-std-1.93.0-aarch64-apple-darwin.tar.xz": "8603c63715349636ed85b4fe716c4e827a727918c840e54aff5b243cedadf19b",
-        "rust-std-1.93.0-aarch64-unknown-linux-gnu.tar.xz": "84e82ff52c39c64dfd0e1c2d58fd3d5309d1d2502378131544c0d486b44af20a",
-        "rust-std-1.93.0-x86_64-unknown-linux-gnu.tar.xz": "a849a418d0f27e69573e41763c395e924a0b98c16fcdc55599c1c79c27c1c777",
-        "rustc-1.93.0-aarch64-apple-darwin.tar.xz": "092be03c02b44c405dab1232541c84f32b2d9e8295747568c3d531dd137221dc",
-    },
     versions = [RUST_VERSION],
 )
 use_repo(rust, "rust_toolchains")
