@@ -35,6 +35,7 @@ _BUILD_FLAGS_RELEASE = [
 # symbols eliminates GLOB_DAT entries, leaving only IRELATIVE in .rela.dyn.
 _STATIC_WEAK_SYMS = [
     "__gmon_start__",
+    "__cxa_finalize",
     "__cxa_thread_atexit_impl",
     "statx",
 ] + [
