@@ -37,6 +37,8 @@ _STATIC_WEAK_SYMS = [
     "__gmon_start__",
     "__cxa_finalize",
     "__cxa_thread_atexit_impl",
+    "_ITM_deregisterTMCloneTable",
+    "_ITM_registerTMCloneTable",
     "statx",
 ] + [
     "_nl_current_LC_%s_used" % loc
