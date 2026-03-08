@@ -35,7 +35,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y --no-install-recommends \
-            git ca-certificates curl
+            git ca-certificates curl libxml2
 
       - name: Install Bazelisk (Linux)
         if: runner.os == 'Linux'
@@ -85,7 +85,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y --no-install-recommends \
-            git ca-certificates curl
+            git ca-certificates curl libxml2
 
       - name: Install Bazelisk
         run: |
