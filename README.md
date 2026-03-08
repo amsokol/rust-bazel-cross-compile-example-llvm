@@ -72,10 +72,10 @@ bazel build //rust/hello_world:hello_world_arm64_v8_4a
 
 | Dependency      | Version               |
 | --------------- | --------------------- |
-| rules_rust      | 0.68.1                |
+| rules_rust      | 0.69.0                |
 | toolchains_llvm | 1.6.0                 |
 | platforms       | 1.0.0                 |
-| Rust            | 1.93.1 (edition 2024) |
+| Rust            | 1.94.0 (edition 2024) |
 | LLVM            | 21.1.8                |
 
 Sysroots are fetched from [cross-compilation-sysroots](https://github.com/amsokol/cross-compilation-sysroots) (Debian Trixie).

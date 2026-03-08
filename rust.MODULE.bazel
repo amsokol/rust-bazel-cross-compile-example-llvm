@@ -9,15 +9,15 @@ sysroot = use_repo_rule("@toolchains_llvm//toolchain:sysroot.bzl", "sysroot")
 # INTEL/AMD64 Sysroot.
 sysroot(
     name = "sysroot_linux_amd64",
-    sha256 = "b0c7a857edc6947c245df3825b5befabba235fcbdac48a4b127ce7aedc8dbd1c",
-    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2026-02-24/debian-trixie-sysroot-amd64.tar.xz"],
+    sha256 = "7b829b3e0026bbd90fee9fcd8064f930fb16c0fed6702622c70f57002d23550f",
+    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2026-03-08/debian-trixie-sysroot-amd64.tar.xz"],
 )
 
 # ARM 64 Sysroot.
 sysroot(
     name = "sysroot_linux_arm64",
-    sha256 = "41e05d508eebd6ed22254e34a882b6224a206014889461573b040084854cfd86",
-    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2026-02-24/debian-trixie-sysroot-arm64.tar.xz"],
+    sha256 = "8989499585d8d25ae962d55c530b930a65c7ac0a7976083c9c8422e88c27f864",
+    urls = ["https://github.com/amsokol/cross-compilation-sysroots/releases/download/2026-03-08/debian-trixie-sysroot-arm64.tar.xz"],
 )
 
 llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm", dev_dependency = True)
@@ -49,7 +49,7 @@ register_toolchains(
 
 RUST_EDITION = "2024"
 
-RUST_VERSION = "1.93.1"
+RUST_VERSION = "1.94.0"
 
 rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
 rust.toolchain(
