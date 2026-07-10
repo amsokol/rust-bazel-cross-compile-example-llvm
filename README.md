@@ -5,7 +5,7 @@ A minimal example of cross-compiling Rust to Linux (x86_64 and ARM64) using Baze
 ## Features
 
 - **Cross-compilation** from macOS (Apple Silicon) to Linux x86_64 and AArch64
-- **LLVM toolchain** (v22.1.4) for linking with Debian Trixie sysroots
+- **LLVM toolchain** (v22.1.8) for linking with Debian Trixie sysroots
 - **Microarchitecture variants** for optimized builds:
   - **x86-64**: baseline, v2, v3, v4 (AVX-512)
   - **AArch64**: baseline, v8.1a through v9.6a (SVE2, etc.)
@@ -72,11 +72,11 @@ bazel build //rust/hello_world:hello_world_arm64_v8_4a
 
 | Dependency      | Version               |
 | --------------- | --------------------- |
-| rules_rust      | 0.70.0                |
+| rules_rust      | 0.71.3                |
 | toolchains_llvm | 1.7.0                 |
-| platforms       | 1.0.0                 |
-| Rust            | 1.95.0 (edition 2024) |
-| LLVM            | 22.1.4                |
+| platforms       | 1.1.0                 |
+| Rust            | 1.97.0 (edition 2024) |
+| LLVM            | 22.1.8                |
 
 Sysroots are fetched from [cross-compilation-sysroots](https://github.com/amsokol/cross-compilation-sysroots) (Debian Trixie).
 
